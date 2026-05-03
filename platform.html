@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fiscal Resilience Platform</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#ffffff;
+}
+
+/* NAVBAR */
+.nav {
+  display:flex;
+  gap:12px;
+  padding:15px 50px;
+  border-bottom:2px solid #e6ecf2;
+}
+
+.nav button {
+  border:none;
+  background:#f4f6f9;
+  padding:10px 18px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:14px;
+  color:#0b2a4a;
+  transition:0.2s;
+}
+
+.nav button:hover {
+  background:#0b2a4a;
+  color:white;
+}
+
+.nav button.active {
+  background:#0b2a4a;
+  color:white;
+  font-weight:600;
+}
+
+/* PAGE CONTAINER */
+.page {
+  padding:40px 60px;
+  display:none;
+}
+
+.page.active {
+  display:block;
+}
+
+/* TITLES */
+h1 {
+  font-size:36px;
+  color:#0b2a4a;
+}
+
+h2 {
+  font-size:24px;
+}
+
+/* COUNTRY LAYOUT */
+.table {
+  width:900px;
+}
+
+.table td {
+  vertical-align:top;
+}
+
+/* BUTTON STYLE BOXES */
+.card {
+  border:1px solid #ddd;
+  padding:20px;
+  border-radius:10px;
+  margin:10px 0;
+  background:#f9fbfd;
+}
+</style>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+
+  document.getElementById(id).classList.add('active');
+  document.getElementById('btn-'+id).classList.add('active');
+}
+
+/* COUNTRY SWITCH */
+function showCountry(value) {
+  document.querySelectorAll('.country').forEach(el => el.style.display='none');
+  document.getElementById('country-'+value).style.display='block';
+}
+
+window.onload = function() {
+  showPage('overview');
+  showCountry('fiji');
+};
+</script>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <button id="btn-overview" onclick="showPage('overview')">Overview</button>
+  <button id="btn-countries" onclick="showPage('countries')">Countries</button>
+  <button id="btn-guidance" onclick="showPage('guidance')">Policy Guidance</button>
+  <button id="btn-tools" onclick="showPage('tools')">Tools</button>
+  <button id="btn-community" onclick="showPage('community')">Community</button>
+</div>
+
+<!-- ================= OVERVIEW ================= -->
+<div id="overview" class="page">
+
+<h1>Fiscal Resilience Platform</h1>
+
+<div class="card">
+<b>From fiscal repair → fiscal resilience</b>
+<ul>
+<li>Adjustment happens repeatedly</li>
+<li>But stability does not endure</li>
+<li>Core issue: lack of durability</li>
+</ul>
+</div>
+
+<div class="card">
+<b>Three binding constraints:</b>
+<ul>
+<li>Weak buffers</li>
+<li>Volatile revenues</li>
+<li>Extreme shock exposure</li>
+</ul>
+</div>
+
+</div>
+
+<!-- ================= COUNTRIES ================= -->
+<div id="countries" class="page">
+
+<h1>Country Profiles</h1>
+
+<select onchange="showCountry(this.value)">
+  <option value="fiji">Fiji</option>
+  <option value="tonga">Tonga</option>
+</select>
+
+<!-- ===== COUNTRY: FIJI ===== -->
+<div id="country-fiji" class="country">
+
+<h2>Fiji</h2>
+
+<table class="table">
+<tr>
+<td width="50%">
+<img src="a.jpg" style="width:100%;">
+</td>
+
+<td width="50%" style="font-size:14px;">
+<b>Binding constraints</b>
+<ul>
+<li>Weak buffers</li>
+<li>High shock exposure</li>
+<li>Fragile debt sustainability</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<div class="card">
+<b>Fiscal context</b>
+<p>Fiji entered COVID with elevated deficits and experienced a severe contraction driven by tourism collapse.</p>
+</div>
+
+</div>
+
+<!-- ===== COUNTRY: TONGA ===== -->
+<div id="country-tonga" class="country" style="display:none;">
+
+<h2>Tonga</h2>
+
+<p>High exposure to shocks and narrow economic base.</p>
+
+</div>
+
+</div>
+
+<!-- ================= GUIDANCE ================= -->
+<div id="guidance" class="page">
+
+<h1>Policy Guidance</h1>
+
+<div class="card">
+<b>Buffers</b>
+<p>Introduce explicit buffer floors linked to risk exposure.</p>
+</div>
+
+<div class="card">
+<b>Debt</b>
+<p>Integrate stress testing into fiscal frameworks.</p>
+</div>
+
+<div class="card">
+<b>Revenue</b>
+<p>Reduce volatility and broaden tax base.</p>
+</div>
+
+</div>
+
+<!-- ================= TOOLS ================= -->
+<div id="tools" class="page">
+
+<h1>Tools</h1>
+
+<ul>
+<li>Buffer calculator (coming soon)</li>
+<li>Revenue volatility tool</li>
+<li>Debt stress testing tool</li>
+</ul>
+
+</div>
+
+<!-- ================= COMMUNITY ================= -->
+<div id="community" class="page">
+
+<h1>Community of Practice</h1>
+
+<ul>
+<li>Peer exchange across PIC-11</li>
+<li>Case sharing</li>
+<li>Policy discussions</li>
+</ul>
+
+</div>
+
+</body>
+</html>
