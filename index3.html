@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FRP - Tools</title>
+<title>Fiscal Resilience Platform</title>
 
 <style>
 
@@ -24,7 +24,7 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 60px;
+    padding:18px 60px;
     background:white;
     box-shadow:0 2px 12px rgba(0,0,0,0.08);
     position:sticky;
@@ -57,28 +57,27 @@ body{
     color:white;
 }
 
-.navlinks a.active{
-    background:#0b2a4a;
-    color:white;
-}
-
 /* =========================
-   HERO
+   HERO SECTION
 ========================= */
 
 .hero{
     position:relative;
-    padding:110px 90px 90px 90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    min-height:720px;
+    overflow:hidden;
+    padding:80px 90px;
 
     background:
-    linear-gradient(rgba(4,22,40,0.88), rgba(4,22,40,0.88)),
-    url("bluebg.png");
+    linear-gradient(rgba(4,22,40,0.82), rgba(4,22,40,0.82)),
+    url("bluebg.jpg");
 
     background-size:cover;
     background-position:center;
 
     color:white;
-    overflow:hidden;
 }
 
 .pattern{
@@ -86,40 +85,92 @@ body{
     right:-120px;
     top:0;
     width:720px;
-    opacity:0.12;
+    opacity:0.15;
     pointer-events:none;
 }
 
-.hero-content{
+.hero-text{
     position:relative;
     z-index:2;
-    max-width:900px;
+    max-width:680px;
 }
 
-.hero h1{
-    font-size:68px;
-    margin:0 0 30px 0;
-    line-height:1.05;
+.hero-text h1{
+    font-size:76px;
+    line-height:1.02;
+    margin:0 0 25px 0;
     font-weight:800;
 }
 
-.hero p{
+.hero-text p{
     font-size:24px;
-    line-height:1.7;
-    color:#dce8f5;
+    line-height:1.6;
+    color:#dbe8f3;
+}
+
+.buttons{
+    display:flex;
+    gap:18px;
+    margin-top:40px;
+}
+
+.buttons a{
+    text-decoration:none;
+    padding:18px 30px;
+    border-radius:14px;
+    font-weight:700;
+    transition:0.25s;
+}
+
+.primary{
+    background:#17b9ea;
+    color:white;
+}
+
+.primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 25px rgba(23,185,234,0.4);
+}
+
+.secondary{
+    background:white;
+    color:#0b2a4a;
+}
+
+.secondary:hover{
+    transform:translateY(-2px);
+}
+
+.hero-image{
+    position:relative;
+    z-index:2;
+
+    width:430px;
+    height:530px;
+
+    border-radius:28px;
+    overflow:hidden;
+
+    box-shadow:0 25px 55px rgba(0,0,0,0.35);
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 /* =========================
-   MAIN SECTION
+   SECTIONS
 ========================= */
 
 .section{
     padding:85px 90px;
 }
 
-.section-title{
-    font-size:42px;
-    margin-bottom:40px;
+.section h2{
+    font-size:44px;
+    margin-bottom:38px;
 }
 
 /* =========================
@@ -134,8 +185,8 @@ body{
 
 .card{
     background:white;
-    padding:34px;
-    border-radius:24px;
+    padding:32px;
+    border-radius:22px;
     box-shadow:0 10px 28px rgba(0,0,0,0.06);
     transition:0.25s;
 }
@@ -147,48 +198,27 @@ body{
 
 .card h3{
     margin-top:0;
-    margin-bottom:18px;
     font-size:26px;
-    color:#0b2a4a;
 }
 
 .card p{
     color:#4d667c;
     line-height:1.7;
-    font-size:17px;
-}
-
-.tag{
-    display:inline-block;
-    margin-top:18px;
-    padding:8px 14px;
-    border-radius:999px;
-    background:#e8f5fb;
-    color:#0b7ca5;
-    font-size:14px;
-    font-weight:700;
 }
 
 /* =========================
-   FEATURE SECTION
+   DARK SECTION
 ========================= */
 
-.feature{
+.dark{
     background:#0b2a4a;
     color:white;
-    padding:85px 90px;
 }
 
-.feature h2{
-    font-size:46px;
-    margin-top:0;
-    margin-bottom:30px;
-}
-
-.feature p{
+.dark p{
+    color:#dce8f3;
     font-size:22px;
     line-height:1.8;
-    color:#dce8f5;
     max-width:1050px;
 }
 
@@ -198,7 +228,7 @@ body{
 
 .footer{
     background:#041f3a;
-    padding:22px 70px;
+    padding:20px 70px;
     border-top:1px solid rgba(255,255,255,0.06);
 }
 
@@ -217,7 +247,7 @@ body{
 }
 
 .footer-left img{
-    height:30px;
+    height:26px;
     width:auto;
     display:block;
 }
@@ -230,12 +260,12 @@ body{
 
 .footer-links{
     display:flex;
-    gap:28px;
+    gap:26px;
     flex-wrap:wrap;
 }
 
 .footer-links a{
-    color:#dce8f5;
+    color:#d7e5f2;
     text-decoration:none;
     font-size:15px;
     transition:0.2s;
@@ -251,24 +281,31 @@ body{
 
 @media(max-width:1100px){
 
+    .hero{
+        flex-direction:column;
+        padding:60px 35px;
+    }
+
+    .hero-text h1{
+        font-size:54px;
+    }
+
+    .hero-image{
+        margin-top:45px;
+        width:100%;
+        height:420px;
+    }
+
     .grid{
         grid-template-columns:1fr;
     }
 
-    .hero{
-        padding:70px 35px;
+    .navbar{
+        padding:16px 25px;
     }
 
     .section{
         padding:60px 35px;
-    }
-
-    .feature{
-        padding:60px 35px;
-    }
-
-    .navbar{
-        padding:18px 25px;
     }
 
     .footer{
@@ -278,10 +315,6 @@ body{
     .footer-inner{
         flex-direction:column;
         align-items:flex-start;
-    }
-
-    .hero h1{
-        font-size:52px;
     }
 }
 
@@ -296,124 +329,108 @@ body{
 
 <div class="navbar">
 
-    <div class="logo">
-        <img src="wb_blue.jpg" alt="World Bank Group">
-    </div>
+<div class="logo">
+    <img src="wb_blue.jpg" alt="World Bank Group">
+</div>
 
     <div class="navlinks">
         <a href="index.html">Overview</a>
         <a href="countries.html">Countries</a>
         <a href="guidance.html">Guidance</a>
-        <a href="tools.html" class="active">Tools</a>
+        <a href="tools.html">Tools</a>
         <a href="community.html">Community</a>
     </div>
 
 </div>
 
 <!-- =========================
-     HERO
+     HERO SECTION
 ========================= -->
 
 <section class="hero">
 
     <img class="pattern" src="pattern.png" alt="">
 
-    <div class="hero-content">
+    <div class="hero-text">
 
         <h1>
-            Fiscal Resilience Tools
+            Fiscal Resilience Platform
         </h1>
 
         <p>
-            Practical analytical tools supporting fiscal resilience diagnostics, scenario analysis, policy prioritization, and operational implementation across PIC-11 countries.
+            A regional platform supporting resilient public finance systems across PIC-11 through diagnostics, policy guidance, practical tools, and regional collaboration.
         </p>
 
+        <div class="buttons">
+
+            <a class="primary" href="countries.html">
+                Explore Countries
+            </a>
+
+            <a class="secondary" href="guidance.html">
+                Regional Insights
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="hero.png" alt="Pacific Islands">
     </div>
 
 </section>
 
 <!-- =========================
-     TOOL GRID
+     PLATFORM CONTENT
 ========================= -->
 
 <section class="section">
 
-    <h2 class="section-title">
-        Analytical & Operational Tools
-    </h2>
+    <h2>Explore the Platform</h2>
 
     <div class="grid">
 
         <div class="card">
-            <h3>Fiscal Buffer Calculator</h3>
-
+            <h3>Countries</h3>
             <p>
-                Estimate adequacy of fiscal buffers relative to expenditure needs, disaster exposure, and macroeconomic volatility.
+                Browse country fiscal resilience profiles, diagnostics, and pillar-level results across PIC-11 economies.
             </p>
-
-            <div class="tag">
-                Fiscal Buffers
-            </div>
         </div>
 
         <div class="card">
-            <h3>Revenue Volatility Tool</h3>
-
+            <h3>Thematic Guidance</h3>
             <p>
-                Analyze concentration risks, tourism dependence, external revenue exposure, and long-term revenue resilience.
+                Explore policy guidance on fiscal buffers, debt sustainability, revenues, expenditure efficiency, and exposure to shocks.
             </p>
-
-            <div class="tag">
-                Revenue Resilience
-            </div>
         </div>
 
         <div class="card">
-            <h3>Debt Stress Tester</h3>
-
+            <h3>Data & Tools</h3>
             <p>
-                Explore debt sustainability under alternative growth, financing, disaster, and interest-rate scenarios.
+                Access indicators, methodology notes, resilience metrics, and operational implementation resources.
             </p>
-
-            <div class="tag">
-                Debt Sustainability
-            </div>
         </div>
 
         <div class="card">
-            <h3>Shock Exposure Dashboard</h3>
-
+            <h3>Regional Insights</h3>
             <p>
-                Assess climate, disaster, external, and commodity-related vulnerabilities affecting fiscal sustainability.
+                Compare countries across peer groups and identify structural fiscal resilience patterns in the Pacific.
             </p>
-
-            <div class="tag">
-                Shock Exposure
-            </div>
         </div>
 
         <div class="card">
-            <h3>PFM Performance Tracker</h3>
-
+            <h3>Case Studies</h3>
             <p>
-                Monitor expenditure efficiency, public financial management reforms, budget execution, and transparency indicators.
+                Learn from country experiences and reform pathways that strengthened fiscal resilience under shocks.
             </p>
-
-            <div class="tag">
-                Expenditure Efficiency
-            </div>
         </div>
 
         <div class="card">
-            <h3>Country Comparison Explorer</h3>
-
+            <h3>Community</h3>
             <p>
-                Compare fiscal resilience indicators across countries, peer groups, and regional averages.
+                Support peer learning, seminars, collaboration, technical exchange, and regional policy dialogue.
             </p>
-
-            <div class="tag">
-                Regional Benchmarking
-            </div>
         </div>
 
     </div>
@@ -424,14 +441,15 @@ body{
      STRATEGIC SECTION
 ========================= -->
 
-<section class="feature">
+<section class="section dark">
 
     <h2>
-        From Diagnostics to Operational Support
+        From Fiscal Repair to Fiscal Resilience
     </h2>
 
     <p>
-        The FRP tools are designed not only to support diagnostics and benchmarking, but also to strengthen operational decision-making, reform sequencing, and regional peer learning. Over time, the platform will integrate dynamic dashboards, downloadable datasets, scenario simulations, and implementation guidance aligned with the five pillars of fiscal resilience.
+        PIC-11 countries repeatedly undertake fiscal adjustment, yet resilience often does not endure.
+        The Fiscal Resilience Platform connects diagnostics, policy guidance, practical tools, and regional collaboration to support more durable public finance systems capable of withstanding future shocks.
     </p>
 
 </section>
@@ -445,6 +463,10 @@ body{
     <div class="footer-inner">
 
         <div class="footer-left">
+
+            <!-- BEST OPTION:
+                 replace wb_blue.jpg with cleaned transparent version later
+            -->
 
             <img src="wb_blue.jpg" alt="World Bank Group">
 
