@@ -46,15 +46,30 @@ color:white;
 }
 
 .hero{
-padding:90px;
-background:#0b2a4a;
-color:white;
+    background:
+    linear-gradient(rgba(4,22,40,0.72), rgba(4,22,40,0.72)),
+    url("pacific.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+    padding:28px 90px;
 }
 
 .hero h1{
-font-size:58px;
+    font-size:42px;
+    max-width:900px;
+    margin:0 0 10px 0;
 }
 
+.hero p{
+    font-size:18px;
+    max-width:900px;
+    line-height:1.45;
+    margin:0;
+    color:#d8e4f0;
+}
 .page{
 padding:80px 90px;
 }
@@ -110,6 +125,38 @@ gap:24px;
 color:#d7e5f2;
 text-decoration:none;
 }
+.seminar-link{
+display:inline-block;
+margin-top:14px;
+font-weight:700;
+color:#0b2a4a;
+text-decoration:none;
+padding:12px 18px;
+background:#e8f0fa;
+border-radius:10px;
+transition:0.2s;
+}
+
+.seminar-link:hover{
+background:#0b2a4a;
+color:white;
+}
+
+.video-card{
+width:50%;
+margin-top:25px;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 24px rgba(0,0,0,0.12);
+background:white;
+}
+
+.video-card img{
+width:100%;
+height:auto;
+display:block;
+object-fit:contain;
+}
 
 </style>
 </head>
@@ -118,15 +165,18 @@ text-decoration:none;
 
 <div class="navbar">
 
-<div class="logo">FRP</div>
-
-<div class="navlinks">
-<a href="index.html">Overview</a>
-<a href="countries.html">Countries</a>
-<a href="guidance.html">Guidance</a>
-<a href="tools.html">Tools</a>
-<a href="community.html" class="active">Community</a>
+<div class="logo">
+    <img src="wb_blue.jpg" alt="World Bank Group">
 </div>
+
+    <div class="navlinks">
+        <a href="index.html">Overview</a>
+        <a href="countries.html">Countries</a>
+<a href="region.html">Region</a>
+        <a href="guidance.html">Guidance</a>
+        <a href="tools.html">Tools</a>
+        <a href="community.html" class="active">Community</a>
+    </div>
 
 </div>
 
@@ -149,6 +199,23 @@ Supporting peer learning and regional collaboration across PIC-11.
 <p>
 Support structured dialogue and policy exchange across ministries of finance, central banks, and development partners.
 </p>
+<a href="https://www.worldbank.org/en/programs/tokyo-drm-hub#2" class="seminar-link" target="_blank">
+World Bank Tokyo Disaster Risk Management (DRM) Hub
+</a>
+
+<div class="video-card">
+
+<a href="https://www.youtube.com/watch?v=acPEyoFU31E" target="_blank">
+
+<img 
+src="https://img.youtube.com/vi/acPEyoFU31E/maxresdefault.jpg" 
+alt="Video Thumbnail">
+
+<div class="play-button">▶</div>
+
+</a>
+
+</div>
 
 </div>
 
@@ -170,8 +237,12 @@ Share country experiences on fiscal resilience reforms, disaster financing, and 
 Provide practical seminars, workshops, and technical discussions linked to the FRP pillars.
 </p>
 
-</div>
+<a href="https://thedocs.worldbank.org/en/doc/33b444c303cd6cb061209e41200e724b-0070012025/tokyo-fiscal-resilience-event-17-19-march-2025-agenda" class="seminar-link" target="_blank">
+Building Fiscal Resilience in Small Island States, Tokyo, 17-19 March 2025
+</a>
 
+
+</div>
 </div>
 
 <footer class="footer">
