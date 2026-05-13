@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fiscal Resilience by country groupings</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#0b2a4a;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+    background:#041f3a;
+    padding:22px 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.logo-area img{
+    height:42px;
+}
+
+.site-title{
+    color:white;
+    font-size:32px;
+    font-weight:700;
+}
+
+.navlinks{
+    display:flex;
+    gap:18px;
+}
+
+.navlinks a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    padding:10px 18px;
+    border-radius:8px;
+    transition:0.2s;
+}
+
+.navlinks a:hover,
+.navlinks a.active{
+    background:rgba(255,255,255,0.15);
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    background:
+    linear-gradient(rgba(4,22,40,0.72), rgba(4,22,40,0.72)),
+    url("pacific.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+    padding:28px 90px;
+}
+
+.hero h1{
+    font-size:42px;
+    max-width:900px;
+    margin:0 0 10px 0;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:900px;
+    line-height:1.45;
+    margin:0;
+    color:#d8e4f0;
+}
+
+/* ===== MAIN PAGE ===== */
+
+.page{
+    padding:70px 90px;
+}
+
+/* ===== SELECT ===== */
+
+select{
+    padding:16px 24px;
+    border-radius:14px;
+    border:1px solid #d5dee8;
+    font-size:18px;
+    background:white;
+    margin-bottom:40px;
+    min-width:260px;
+}
+
+/* ===== COUNTRY BLOCK ===== */
+
+.content{
+    display:none;
+}
+
+.content h2{
+    font-size:44px;
+    margin-bottom:20px;
+}
+
+/* ===== TOP CARD ===== */
+
+.country-top{
+    background:white;
+    border-radius:26px;
+    padding:30px;
+    box-shadow:0 10px 28px rgba(0,0,0,0.08);
+    margin-bottom:45px;
+}
+
+.country-grid{
+    display:grid;
+    grid-template-columns:450px 1fr;
+    gap:40px;
+    align-items:start;
+}
+
+.country-grid img{
+    width:100%;
+    border-radius:18px;
+}
+
+.binding-box{
+    background:#f4f8fc;
+    border-radius:18px;
+    padding:28px;
+}
+
+.binding-box h3{
+    margin-top:0;
+    font-size:26px;
+}
+
+.binding-box ul{
+    line-height:1.9;
+    color:#425b72;
+}
+
+/* ===== FRI IMAGE ===== */
+
+.fri-chart{
+    margin-top:40px;
+    margin-bottom:50px;
+}
+
+.fri-chart img{
+    width:100%;
+    max-width:700px;
+}
+
+/* ===== ACCORDION ===== */
+
+.accordion{
+    margin-top:30px;
+}
+
+.accordion details{
+    background:white;
+    border-radius:18px;
+    margin-bottom:18px;
+    padding:24px 30px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.06);
+    border:none;
+}
+
+.accordion summary{
+    cursor:pointer;
+    font-size:24px;
+    font-weight:700;
+}
+
+.accordion p{
+    font-size:18px;
+    line-height:1.9;
+    color:#425b72;
+}
+
+/* ===== FOOTER ===== */
+
+.footer{
+    background:#041f3a;
+    padding:22px 70px;
+    margin-top:80px;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.footer-left{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-left img{
+    height:32px;
+    width:auto;
+}
+
+.footer-title{
+    color:white;
+    font-size:18px;
+    font-weight:500;
+}
+
+.footer-links{
+    display:flex;
+    gap:34px;
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    color:#dce8f5;
+    text-decoration:none;
+    font-size:16px;
+    transition:0.2s;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+</style>
+<script>
+function showBlock(value) {
+  document.querySelectorAll('.content').forEach(el => {
+    el.style.display = 'none';
+  });
+
+  document.getElementById('block-' + value).style.display = 'block';
+}
+
+window.onload = function() {
+  showBlock('rw');
+};
+</script>
+
+</head>
+
+<body>
+
+<!-- ✅ NAVBAR GOES HERE -->
+<!-- NAVBAR -->
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo-area">
+
+<img src="wb_blue.jpg">
+
+<div class="site-title">
+Fiscal Resilience Platform
+</div>
+
+</div>
+
+<div class="navlinks">
+<a href="index.html">Overview</a>
+<a href="countries.html">Countries</a>
+<a href="region.html" class="active">Region</a>
+<a href="guidance.html">Guidance</a>
+<a href="tools.html">Tools</a>
+<a href="community.html">Community</a>
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>
+Fiscal Resilience by Country Groupings
+</h1>
+
+<p>
+Explore fiscal resilience diagnostics, vulnerabilities,
+policy priorities, and resilience performance across main groupings of the PIC-11 economies.
+</p>
+
+</section>
+<div class="page">
+
+  <h1>Fiscal Resilience by country groupings</h1>
+
+  
+
+  <!-- DROPDOWN -->
+  <select onchange="showBlock(this.value)">
+	
+    <option value="rw">Regional Weighted Average</option>		
+    <option value="ra">Regional Average</option>		
+    <option value="td">Tourism-Dependent</option>		
+    <option value="sw">Sovereign Wealth-Dependent</option>		
+
+
+  </select>
+
+
+  <!-- SECTION TITLE -->
+  <h2 id="sectionTitle"></h2>
+
+<!-- TEXT -->
+<!-- TEXT -->
+
+</div><div id="block-rw" class="content" style="margin-left:80px;"><h2><p>Regional Weighted Average</p></h2><table style="table-layout: fixed; width:1100px; margin-bottom:40px;"><tr><td style="width:450px;"><img id="mainImage" src="rw.jpg" style="width:100%; border-radius:18px;" alt="FRI Image"></td><td style="width:550px; font-size:90%; padding-left:30px; vertical-align:top;"><p><b>Binding constraints</b></p><p></p><p>• Critically weak liquid fiscal buffers despite moderate aggregate fiscal balances, limiting the ability to absorb shocks without abrupt adjustment or external financing</p><p>• Elevated debt vulnerabilities in several larger economies, with weak buffer positions increasing sensitivity to future shocks and financing pressures</p><p>• High structural exposure to climate, disaster, and external demand shocks, requiring substantially stronger precautionary fiscal frameworks than currently observed</p></td></tr></table><p><strong></strong> <img id="mainImage" style="width:900px; margin-top:20px; margin-bottom:30px;" src="rwq.jpg" alt="FRI Profile"><div style="font-size:1em; width:900px;"><p><b>Fiscal context and recent trends</b></p><p>The GDP-weighted regional results, heavily influenced by larger economies such as Fiji and Papua New Guinea, suggest moderate overall fiscal resilience across the Pacific (composite score: 0.55), but with significant structural imbalances across pillars. Revenue Resilience is the strongest component (0.71), supported by strong Domestic Revenue Strength (0.72), tax buoyancy (0.70), and relatively stable aggregate revenue performance, reflecting the contribution of larger and more diversified economies with broader tax bases and stronger administrative systems. Expenditure Efficiency is also moderate-to-strong (0.57), particularly due to relatively stable recurrent-to-capital expenditure structures (0.89), although spending rigidities and wage pressures (0.37) continue to constrain adjustment flexibility. By contrast, Buffers remain critically weak (0.29). Despite moderate fiscal balance performance (0.62), the region’s Fiscal Liquidity Index remains extremely low (0.06) and expenditure coverage reserves remain insufficient (0.18), indicating that many countries continue to operate with limited liquid fiscal space despite post-pandemic recovery. Debt Sustainability is moderate (0.54), supported by concessional financing structures and relatively favorable DSF ratings (0.81), but constrained by elevated debt burdens in several larger economies. Shock Resilience is relatively strong in weighted terms (0.65), reflecting the greater recovery capacity and financing access of larger economies, although underlying exposure to natural disasters, tourism cycles, import dependence (0.78), and external shocks remains substantial across the region.</p></p></div><div class="accordion">
+<details><summary>Fiscal context and recent trends</summary><p>The GDP-weighted regional profile reflects the fiscal resilience of the PIC-11’s economic mass, with larger economies shaping the aggregate results. The regional weighted composite score is moderate at 0.55, indicating that the region has important areas of resilience but also clear structural weaknesses. The weighted profile is characterized by relatively strong revenue performance and shock resilience, but very weak liquid buffers. This means that while larger economies often have broader revenue systems and greater recovery capacity, the region remains constrained by limited immediately available fiscal space.</p></details>
+<details><summary>Resilience profile (FRI results)</summary><p>The weighted regional profile is uneven. Revenue Resilience is the strongest pillar at 0.71, followed by Shock Resilience at 0.65, Expenditure Efficiency at 0.57, and Debt Sustainability at 0.54. Buffers are the weakest pillar at 0.29. This pattern suggests that aggregate resilience is not uniformly weak, but is constrained by a clear imbalance: stronger revenue and shock-resilience scores coexist with very limited liquid fiscal buffers.</p></details>
+<details><summary>Buffers</summary><p>Buffers are the weakest component of the weighted regional profile, with a score of 0.29. While fiscal balances are moderate at 0.62, expenditure coverage is very weak at 0.18 and the Fiscal Liquidity Index is critically low at 0.06. This indicates that even where fiscal balances have improved, many economies still lack sufficient liquid resources to absorb shocks without borrowing, expenditure compression, or external support.</p></details>
+<details><summary>Debt sustainability</summary><p>Debt Sustainability is moderate at 0.54. The DSF Risk Rating score is relatively strong at 0.81, reflecting concessional financing and favorable formal risk assessments in several economies. However, the debt-to-GDP score is weaker at 0.33, and debt interest-to-revenue is moderate at 0.46. This suggests that debt conditions are manageable in parts of the region, but remain vulnerable where debt levels are elevated and buffers are thin.</p></details>
+<details><summary>Revenue resilience</summary><p>Revenue Resilience is the strongest pillar in the weighted regional profile at 0.71. The underlying indicators are also strong: revenue stability scores 0.71, tax buoyancy 0.70, and Domestic Revenue Strength 0.72. This reflects the influence of larger economies with broader domestic revenue systems and stronger tax administration. However, the result should not be interpreted as uniform across all PIC-11 economies, since smaller economies remain more dependent on grants, fishing revenues, tourism, and external flows.</p></details>
+<details><summary>Expenditure efficiency and flexibility</summary><p>Expenditure Efficiency is moderate at 0.57. Recurrent-to-capital spending performs strongly at 0.89, suggesting relatively favorable aggregate expenditure composition. However, the Proportion of Rigidities score is lower at 0.46, and Wage Pressure scores 0.37. This indicates that while expenditure composition appears relatively balanced at the aggregate level, many countries still face limited flexibility once wages, recurrent costs, and other rigid spending commitments are considered.</p></details>
+<details><summary>Shock resilience</summary><p>Shock Resilience is relatively strong in the weighted profile at 0.65. Import Dependence performs strongly at 0.78, Export Concentration at 0.61, and AAL Coverage at 0.57. This suggests that, when weighted by economic size, larger economies provide somewhat stronger aggregate shock-absorption capacity than the simple regional profile. Even so, the region remains exposed to natural disasters, external demand shifts, commodity cycles, and climate-related pressures.</p></details>
+<details><summary>Policy implications</summary><p>The central priority for the weighted regional profile is to strengthen liquid fiscal buffers. The very low Fiscal Liquidity Index and weak expenditure coverage suggest that fiscal repair has not yet translated into sufficient operational shock-absorption capacity. Policy should therefore focus on explicit buffer targets, stronger cash management, better integration of disaster risk financing, and debt strategies that protect fiscal space. Revenue systems are comparatively stronger in weighted terms, but these gains need to be preserved and translated into durable savings rather than recurrent spending pressures.</p></details>
+<details><summary>Key transmission channels</summary><p>• Limited liquid buffers despite moderate fiscal balances</p><p>• Elevated debt pressures in larger economies</p><p>• Revenue systems that are stronger in aggregate but uneven across countries</p><p>• External shocks, natural disasters, and climate risks</p><p>• Spending rigidities that limit adjustment flexibility</p></details>
+</div></div><div id="block-ra" class="content" style="margin-left:80px;"><h2><p>Regional Average</p></h2><table style="table-layout: fixed; width:1100px; margin-bottom:40px;"><tr><td style="width:450px;"><img id="mainImage" src="ra.jpg" style="width:100%; border-radius:18px;" alt="FRI Image"></td><td style="width:550px; font-size:90%; padding-left:30px; vertical-align:top;"><p><b>Binding constraints</b></p><p></p><p>• Persistent dependence on tourism-driven revenues and external demand conditions, creating strong exposure to global downturns and travel disruptions</p><p>• Extremely weak liquid fiscal space despite relatively favorable headline fiscal balances, limiting short-term shock absorption capacity</p><p>• Limited expenditure flexibility, with adjustment frequently falling on capital spending during downturns, undermining long-term resilience and growth</p></td></tr></table><p><strong></strong> <img id="mainImage" style="width:900px; margin-top:20px; margin-bottom:30px;" src="raq.jpg" alt="FRI Profile"><div style="font-size:1em; width:900px;"><p><b>Fiscal context and recent trends</b></p><p>The simple regional average provides a better representation of the “typical” Pacific Island economy by reducing the influence of larger countries. The average composite score (0.54) suggests moderate overall fiscal resilience, though with substantial variation across countries. Debt Sustainability emerges as the strongest pillar (0.69), supported by concessional borrowing conditions, relatively low debt servicing burdens (0.85), and still-manageable debt ratios (0.66) across much of the region. Expenditure Efficiency is also relatively strong (0.60), supported by stable expenditure composition (0.79), although recurrent spending rigidities remain elevated (0.57). Buffers remain structurally weak (0.44), despite moderate fiscal balance performance (0.69), as the average Fiscal Liquidity Index remains relatively low (0.30) and expenditure coverage reserves remain insufficient (0.32) for highly shock-prone economies. Revenue Resilience is only moderate (0.55). While normalized revenue stability indicators appear relatively favorable (0.63), domestic revenue mobilization remains weak for many smaller economies (0.40), reflecting narrow tax bases and dependence on external inflows, grants, tourism, fishing revenues, or sovereign assets. Shock Resilience also remains relatively limited overall (0.43). Although some countries maintain relatively strong disaster financing coverage (0.65), structural vulnerability to climate shocks, economic concentration, and external demand cycles remains a defining characteristic across much of the Pacific region.</p></p></div><div class="accordion">
+<details><summary>Fiscal context and recent trends</summary><p>The simple regional average gives equal weight to each PIC-11 economy and therefore better represents the “typical” country profile. The simple regional composite score is 0.54, very close to the weighted result, but the internal structure differs. Compared with the weighted profile, the simple average shows stronger Buffers and Debt Sustainability, but weaker Revenue Resilience and Shock Resilience. This reflects the fact that several smaller economies have lower debt burdens or stronger headline fiscal positions, while still facing narrow domestic revenue bases and high structural exposure.</p></details>
+<details><summary>Resilience profile (FRI results)</summary><p>The simple regional profile is moderately balanced but still constrained. Debt Sustainability is the strongest pillar at 0.69, followed by Expenditure Efficiency at 0.60, Revenue Resilience at 0.55, Buffers at 0.44, and Shock Resilience at 0.43. The results suggest that the typical PIC-11 economy benefits from concessional financing and relatively manageable debt service, but remains constrained by limited liquidity, narrow revenue systems, and exposure to shocks.</p></details>
+<details><summary>Buffers</summary><p>Buffers score 0.44 under the simple regional average, stronger than the weighted regional score of 0.29. Fiscal balances are relatively strong at 0.69, but expenditure coverage is only 0.32 and the Fiscal Liquidity Index is 0.30. This indicates that many countries maintain relatively prudent headline balances, but still have only moderate liquid fiscal space to respond to shocks. Buffer adequacy remains an important constraint across the typical country profile.</p></details>
+<details><summary>Debt sustainability</summary><p>Debt Sustainability is the strongest pillar under the simple regional average, with a score of 0.69. Debt-to-GDP performs relatively well at 0.66, and debt interest-to-revenue is very strong at 0.85, reflecting concessional borrowing and low debt servicing burdens in many countries. The DSF Risk Rating score is lower at 0.55, indicating that vulnerability remains significant once shocks, narrow revenue bases, and institutional constraints are taken into account.</p></details>
+<details><summary>Revenue resilience</summary><p>Revenue Resilience is moderate at 0.55. Revenue stability scores 0.63 and tax buoyancy 0.61, but Domestic Revenue Strength is weaker at 0.40. This points to a common structural issue across the typical PIC-11 economy: revenues may perform reasonably in some periods, but domestic revenue bases remain narrow and often depend on tourism, grants, fishing revenues, remittances, sovereign asset income, or external transfers.</p></details>
+<details><summary>Expenditure efficiency and flexibility</summary><p>Expenditure Efficiency is relatively strong at 0.60. Recurrent-to-capital spending scores 0.79, while the Proportion of Rigidities scores 0.57 and Wage Pressure scores 0.44. This indicates that expenditure systems are not uniformly weak, but flexibility remains constrained by recurrent spending, wage costs, and the high fixed costs of service delivery in small and dispersed island economies.</p></details>
+<details><summary>Shock resilience</summary><p>Shock Resilience is moderate-to-weak at 0.43. AAL Coverage performs relatively well at 0.65, but Export Concentration is weak at 0.22 and Import Dependence is moderate at 0.41. This suggests that many countries have some disaster risk financing or exposure-management capacity, but remain structurally vulnerable due to narrow export bases, import dependence, and limited economic diversification.</p></details>
+<details><summary>Policy implications</summary><p>The simple regional profile points to the need for broad-based resilience building across the typical PIC-11 economy. Debt indicators are relatively favorable, but this should not create complacency. Policy should focus on strengthening liquidity buffers, improving domestic revenue mobilization, preserving expenditure flexibility, and embedding disaster and climate risks into fiscal planning. The simple average also suggests that smaller countries require tailored approaches that recognize their limited domestic revenue bases and high fixed service-delivery costs.</p></details>
+<details><summary>Key transmission channels</summary><p>• Narrow domestic revenue bases</p><p>• Moderate liquidity despite relatively prudent fiscal balances</p><p>• Concessional debt structures that reduce servicing pressures</p><p>• High fixed costs of public service delivery</p><p>• Climate, disaster, import, and external financing shocks</p></details>
+</div></div><div id="block-td" class="content" style="margin-left:80px;"><h2><p>Tourism-Dependent</p></h2><table style="table-layout: fixed; width:1100px; margin-bottom:40px;"><tr><td style="width:450px;"><img id="mainImage" src="td.jpg" style="width:100%; border-radius:18px;" alt="FRI Image"></td><td style="width:550px; font-size:90%; padding-left:30px; vertical-align:top;"><p><b>Binding constraints</b></p><p></p><p>• Weak revenue resilience due to heavy dependence on externally driven revenues, sovereign rents, grants, and trust fund income, with limited domestic revenue depth</p><p>• Buffer adequacy remains uncertain despite sovereign assets, as stabilization capacity depends heavily on governance, withdrawal rules, and long-term fund performance</p><p>• Structural exposure to concentration risks and limited diversification, leaving fiscal systems vulnerable to external financing shifts and long-term climate pressures</p></td></tr></table><p><strong></strong> <img id="mainImage" style="width:900px; margin-top:20px; margin-bottom:30px;" src="tdq.jpg" alt="FRI Profile"><div style="font-size:1em; width:900px;"><p><b>Fiscal context and recent trends</b></p><p>The tourism-dependent economies display moderate overall fiscal resilience (composite score: 0.51), but remain highly exposed to external demand disruptions and global economic cycles, as demonstrated during the pandemic when border closures and tourism collapses generated some of the sharpest contractions in the region. Debt Sustainability is moderate (0.64), supported by concessional financing conditions, favorable debt service indicators (0.88), and manageable debt burdens (0.57), although debt ratios increased significantly during the pandemic due to prolonged revenue losses and emergency fiscal support measures. Revenue Resilience is also moderate (0.58), supported by relatively solid domestic revenue systems (0.51), but constrained by heavy dependence on tourism-related taxes, imports, and service activity. Buffers remain relatively weak (0.43). Although expenditure coverage indicators are somewhat stronger than the regional average (0.50), the Fiscal Liquidity Index remains extremely weak (0.03), highlighting the limited availability of liquid reserves during prolonged external shocks. Expenditure Efficiency is comparatively weak (0.47), reflecting rigid expenditure structures, limited adjustment flexibility, and the tendency to compress capital spending during crises. Shock Resilience remains constrained (0.41), as these economies continue to face concentrated exposure to tourism cycles, import dependence (0.59), natural disasters, and fluctuations in global demand conditions.</p></p></div><div class="accordion">
+<details><summary>Fiscal context and recent trends</summary><p>Tourism-dependent PICs have a composite score of 0.51, indicating moderate but fragile fiscal resilience. Their fiscal systems are closely tied to tourism flows, consumption activity, imports, and external demand conditions. This creates strong revenue performance during upturns but sharp fiscal deterioration when tourism collapses, as seen during COVID-19. The group profile shows relatively strong Debt Sustainability and moderate Revenue Resilience, but weak liquid buffers, constrained Expenditure Efficiency, and limited Shock Resilience.</p></details>
+<details><summary>Resilience profile (FRI results)</summary><p>The tourism-dependent profile shows Debt Sustainability as the strongest pillar at 0.64, followed by Revenue Resilience at 0.58, Expenditure Efficiency at 0.47, Buffers at 0.43, and Shock Resilience at 0.41. The shape of the profile reflects a core challenge: tourism economies can generate revenues when conditions are favorable, but they remain highly exposed to external demand shocks and often lack sufficient liquidity to smooth downturns.</p></details>
+<details><summary>Buffers</summary><p>Buffers score 0.43, close to the simple regional average but still insufficient for economies exposed to large tourism shocks. Fiscal balances are strong at 0.76 and expenditure coverage is moderate at 0.50. However, the Fiscal Liquidity Index is extremely weak at 0.03, indicating that immediately available liquid fiscal space is very limited. This is a central vulnerability for tourism-dependent economies, where revenue losses can be sudden and prolonged.</p></details>
+<details><summary>Debt sustainability</summary><p>Debt Sustainability is moderate-to-strong at 0.64. Debt interest-to-revenue performs strongly at 0.88, while debt-to-GDP is moderate at 0.57. The DSF Risk Rating score is lower at 0.48, suggesting that debt remains vulnerable under stress scenarios. Concessional financing helps reduce near-term servicing pressures, but prolonged tourism downturns can quickly increase borrowing needs and weaken debt trajectories.</p></details>
+<details><summary>Revenue resilience</summary><p>Revenue Resilience is moderate at 0.58. Revenue stability performs relatively well at 0.72, while tax buoyancy and Domestic Revenue Strength both score 0.51. This reflects the fact that tourism-dependent economies often have more developed tax systems than very small sovereign-rent economies, but their revenues remain closely tied to tourism activity, imports, and consumption cycles. As a result, revenue systems are responsive but also highly exposed to global demand conditions.</p></details>
+<details><summary>Expenditure efficiency and flexibility</summary><p>Expenditure Efficiency is relatively weak at 0.47. Recurrent-to-capital spending scores strongly at 0.81, but the Proportion of Rigidities score is low at 0.35 and Wage Pressure is weak at 0.24. This suggests that expenditure composition may appear manageable, but underlying flexibility is limited. During downturns, adjustment often falls on capital expenditure, which can weaken investment, growth, and long-term resilience.</p></details>
+<details><summary>Shock resilience</summary><p>Shock Resilience is constrained at 0.41. AAL Coverage is moderate at 0.42, Import Dependence is stronger at 0.59, but Export Concentration is weak at 0.22. This reflects the group’s concentration around tourism and externally driven service activity. Even where disaster risk indicators are not the weakest in the region, tourism-dependent economies remain highly vulnerable to travel disruptions, global recessions, health shocks, and climate-related events.</p></details>
+<details><summary>Policy implications</summary><p>For tourism-dependent economies, the priority is to convert recovery periods into durable fiscal resilience. This means rebuilding liquid buffers during tourism upturns, strengthening rules to prevent procyclical spending, diversifying revenue sources, and protecting public investment during downturns. Disaster risk financing should be integrated into fiscal frameworks, but it cannot substitute for core liquidity buffers. Debt strategies should remain conservative because tourism shocks can rapidly weaken both revenues and growth.</p></details>
+<details><summary>Key transmission channels</summary><p>• Tourism demand shocks</p><p>• Consumption and import-related revenue cycles</p><p>• Weak liquid fiscal buffers</p><p>• Capital expenditure compression during downturns</p><p>• External demand, climate, and disaster shocks</p></details>
+</div></div><div id="block-sw" class="content" style="margin-left:80px;"><h2><p>Sovereign Wealth-Dependent</p></h2><table style="table-layout: fixed; width:1100px; margin-bottom:40px;"><tr><td style="width:450px;"><img id="mainImage" src="sw.jpg" style="width:100%; border-radius:18px;" alt="FRI Image"></td><td style="width:550px; font-size:90%; padding-left:30px; vertical-align:top;"><p><b>Binding constraints</b></p><p></p><p>• Moderate fiscal buffers that remain insufficient relative to the scale and frequency of shocks affecting the typical PIC economy</p><p>• Narrow domestic revenue bases and high dependence on grants, imports, remittances, tourism, or externally linked income sources, limiting revenue predictability</p><p>• High fixed costs of service delivery and rigid recurrent expenditure structures, constraining fiscal adjustment and reducing expenditure flexibility</p></td></tr></table><p><strong></strong> <img id="mainImage" style="width:900px; margin-top:20px; margin-bottom:30px;" src="swq.jpg" alt="FRI Profile"><div style="font-size:1em; width:900px;"><p><b>Fiscal context and recent trends</b></p><p>The sovereign wealth-dependent economies exhibit a distinctive fiscal resilience profile characterized by relatively strong balance sheet indicators but structurally weak domestic revenue generation. The composite score (0.44) masks major differences between strong asset positions and underlying economic fragility. Debt Sustainability is relatively strong (0.50), supported by exceptionally low debt ratios (0.89) and minimal debt servicing burdens (0.10), reflecting substantial sovereign assets and limited reliance on commercial borrowing. Buffers are moderate (0.45), with stronger Fiscal Liquidity Index performance (0.46) than most tourism-dependent economies due to accumulated sovereign funds and external assets. However, Revenue Resilience is the weakest pillar (0.31). Domestic Revenue Strength (0.20) and tax buoyancy (0.20) remain extremely weak, reflecting heavy dependence on fishing revenues, sovereign fund returns, grants, and externally linked income streams rather than diversified domestic taxation. Expenditure Efficiency is moderate (0.59), supported by relatively stable expenditure structures (0.75), although recurrent spending rigidities remain elevated (0.60). Shock Resilience remains relatively limited overall (0.33). While several countries maintain strong disaster financing coverage (0.77), long-term resilience remains constrained by climate vulnerability, narrow domestic production bases, economic concentration, and dependence on externally generated income streams. Overall, the sovereign wealth-dependent group illustrates that strong fiscal assets alone do not automatically translate into high fiscal resilience when underlying domestic revenue capacity and economic diversification remain weak.</p></p></div><div class="accordion">
+<details><summary>Fiscal context and recent trends</summary><p>Sovereign wealth-dependent PICs have a composite score of 0.44, indicating weaker overall resilience than the regional average despite the presence of sovereign assets, trust funds, or externally generated income streams. These economies often benefit from fishing revenues, grants, Compact-related flows, sovereign fund returns, or other external income sources. However, the group profile shows that financial assets do not automatically translate into durable fiscal resilience when domestic revenue capacity is weak and revenue flows are externally determined.</p></details>
+<details><summary>Resilience profile (FRI results)</summary><p>The sovereign wealth-dependent profile is highly uneven. Expenditure Efficiency is the strongest pillar at 0.59, followed by Debt Sustainability at 0.50 and Buffers at 0.45. Shock Resilience is weaker at 0.33, while Revenue Resilience is the weakest pillar at 0.31. The profile points to a structural imbalance: these economies often have fiscal assets and low debt, but limited domestic revenue generation and high dependence on volatile external income sources.</p></details>
+<details><summary>Buffers</summary><p>Buffers are moderate at 0.45. Fiscal balances score 0.63 and the Fiscal Liquidity Index is 0.46, both stronger than in the tourism-dependent group. However, expenditure coverage remains weak at 0.25. This suggests that sovereign funds and external assets provide some stabilizing capacity, but liquid resources are not always sufficient, predictable, or effectively integrated into fiscal frameworks. Buffer strength depends heavily on governance, withdrawal rules, and the protection of assets during revenue downturns.</p></details>
+<details><summary>Debt sustainability</summary><p>Debt Sustainability is moderate at 0.50. Debt-to-GDP performs very strongly at 0.89, indicating generally low debt burdens. However, debt interest-to-revenue is weak at 0.10, and the DSF Risk Rating score is moderate at 0.49. This suggests that while debt stocks are often low, fiscal sustainability can still be vulnerable when revenue flows are volatile, externally determined, or weakly linked to domestic economic activity.</p></details>
+<details><summary>Revenue resilience</summary><p>Revenue Resilience is the weakest pillar at 0.31. Revenue stability scores 0.53, but tax buoyancy is very weak at 0.20 and Domestic Revenue Strength is also very weak at 0.20. This reflects the central structural challenge for the group: fiscal systems depend heavily on fishing license fees, grants, sovereign fund income, external agreements, or Compact-related transfers, rather than broad and predictable domestic taxation. Revenues can be large in favorable years, but they are often volatile and difficult to forecast.</p></details>
+<details><summary>Expenditure efficiency and flexibility</summary><p>Expenditure Efficiency is relatively the strongest pillar for the group at 0.59. Recurrent-to-capital spending scores 0.75, while the Proportion of Rigidities scores 0.60 and Wage Pressure scores 0.43. This suggests that expenditure systems are not necessarily the primary weakness, but they remain exposed to revenue volatility. When temporary windfalls are converted into permanent recurrent spending, fiscal flexibility can deteriorate quickly.</p></details>
+<details><summary>Shock resilience</summary><p>Shock Resilience is weak at 0.33. AAL Coverage is relatively strong at 0.77, suggesting some disaster-related risk coverage, but Export Concentration is very weak at 0.08 and Import Dependence is also weak at 0.14. This indicates that sovereign wealth-dependent economies remain highly exposed to economic concentration, narrow production structures, import dependence, climate risks, and external financing uncertainty, even where sovereign assets provide some fiscal cushion.</p></details>
+<details><summary>Policy implications</summary><p>The key policy priority for sovereign wealth-dependent economies is to convert volatile external income and sovereign assets into durable fiscal resilience. This requires stronger fund governance, clear deposit and withdrawal rules, more disciplined use of windfall revenues, and stronger integration of sovereign assets into medium-term fiscal frameworks. Domestic revenue mobilization should be improved where feasible, even if gains are incremental. Expenditure policy should avoid locking temporary revenue gains into permanent recurrent spending commitments.</p></details>
+<details><summary>Key transmission channels</summary><p>• Fishing revenues, grants, Compact transfers, and sovereign fund income</p><p>• Weak domestic revenue mobilization</p><p>• Volatile externally determined fiscal inflows</p><p>• Governance and withdrawal rules for sovereign assets</p><p>• Climate, import, and concentration-related vulnerabilities</p></details>
+
+
+</div></div></div>
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-inner">
+
+<div class="footer-left">
+
+<img src="wb_blue.jpg" alt="World Bank">
+
+<div class="footer-title">
+Fiscal Resilience Platform (FRP)
+</div>
+
+</div>
+
+<div class="footer-links">
+<a href="countries.html">Countries</a>
+<a href="guidance.html">Guidance</a>
+<a href="tools.html">Tools</a>
+<a href="community.html">Community</a>
+</div>
+
+</div>
+
+</footer>
+</body>
+</html>
